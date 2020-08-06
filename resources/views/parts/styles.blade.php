@@ -26,8 +26,8 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 <!-- Modernizr JS -->
-<script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
+{{--<script type="application/javascript" src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>--}}
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
-<script src="{{ asset('js/respond.min.js') }}"></script>
+{{--<script type="application/javascript" src="{{ asset('js/respond.min.js') }}"></script>--}}
 <![endif]-->

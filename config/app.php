@@ -229,4 +229,5 @@ return [
 
     ],
 
+    'author' => env('AUTHOR_NAME', 'Ilyas Akbergen'),
 ];
