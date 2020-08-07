@@ -15,14 +15,25 @@
                             <a href="/">Home</a>
                         </li>
                         <li class="has-dropdown">
-                            <a href="shop.html">Shop</a>
-                            <ul class="dropdown">
-                                <li><a href="product-detail.html">Product Detail</a></li>
-                                <li><a href="cart.html">Shipping Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="order-complete.html">Order Complete</a></li>
-                                <li><a href="add-to-wishlist.html">Wishlist</a></li>
-                            </ul>
+                            <v-tooltip>
+                                <template v-slot:trigger>
+                                    <a href="shop.html">Shop</a>
+                                </template>
+                                <template v-slot:popup>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="product-detail.html">
+                                                Product Detail
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html">
+                                                Shipping Cart
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </template>
+                            </v-tooltip>
                         </li>
                         <li>
                             <a href="blog.html">Blog</a>
@@ -31,17 +42,23 @@
                         <li><a href="contact.html">Contact</a></li>
                         @if (Auth::check())
                             <li class="has-dropdown">
-                                <a href="/profile">
-                                    {{ auth()->user()->email }}
-                                </a>
-                                <ul class="dropdown">
-                                    <li><a href="/settings">Settings</a></li>
-                                    <li>
-                                        <a href="#"
-                                           data-toggle="modal"
-                                           data-target="#logoutModal">Logout</a>
-                                    </li>
-                                </ul>
+                                <v-tooltip>
+                                    <template v-slot:trigger>
+                                        <a href="/profile">
+                                            {{ auth()->user()->email }}
+                                        </a>
+                                    </template>
+                                    <template v-slot:popup>
+                                        <ul class="dropdown">
+                                            <li><a href="/settings">Settings</a></li>
+                                            <li>
+                                                <a href="#"
+                                                   data-toggle="modal"
+                                                   data-target="#logoutModal">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </template>
+                                </v-tooltip>
                             </li>
                         @else
                             <li>

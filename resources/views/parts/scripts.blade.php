@@ -20,4 +20,4 @@
 {{--<!-- Main -->--}}
 {{--<script type="application/javascript" src="{{ asset('js/main.js') }}"></script>--}}
 
-<script type="application/javascript" src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
