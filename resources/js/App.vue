@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <transition name="slide-fade" mode="out-in">
             <router-view />
         </transition>
@@ -11,7 +11,7 @@
   export default {
     name: 'App',
     components: {
-       // VTooltip: () => import('./components/VTooltip'),
+        Categories: () => import('./components/Categories'),
     },
     mounted() {
 
@@ -22,11 +22,11 @@
       // ]),
     },
     computed: {
-      // ...mapState('stage', ['step']),
+      ...mapState('offer', ['testVar']),
     }
   }
 </script>
 
 <style lang="sass">
-    /*@import "../assets/style/all.css"*/
+
 </style>

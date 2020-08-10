@@ -1,7 +1,7 @@
 <nav class="colorlib-nav" role="navigation">
     <div class="top-menu">
         <div class="container">
-            <div class="row">
+            <div class="row d-flex justify-content-between">
                 <div class="col-xs-2">
                     <div id="colorlib-logo">
                         <a href="{{ url('/') }}">
@@ -9,7 +9,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xs-10 text-right menu-1">
+                <div class="col-xs-7 text-right menu-1">
                     <ul>
                         <li class="{{ Request::is('/') ? 'active' : '' }}">
                             <a href="/">Home</a>
@@ -50,16 +50,23 @@
                                     </template>
                                     <template v-slot:popup>
                                         <ul class="dropdown">
-                                            <li><a href="/settings">Settings</a></li>
+                                            <li>
+                                                <a href="/settings">
+                                                    Settings
+                                                </a>
+                                            </li>
                                             <li>
                                                 <a href="#"
-                                                   data-toggle="modal"
-                                                   data-target="#logoutModal">Logout</a>
+                                                   @click="showLogoutModal"
+                                                >
+                                                    Logout
+                                                </a>
                                             </li>
                                         </ul>
                                     </template>
                                 </v-tooltip>
                             </li>
+                            @include('parts.logout-modal')
                         @else
                             <li>
                                 <a href="/login">Sign In</a>
@@ -67,6 +74,14 @@
                             </li>
                         @endif
                     </ul>
+                </div>
+                <div class="col-xs-3 text-right">
+                    @if (Auth::check())
+                        <a class="btn btn-primary"
+                           href="{{ url('/offers/create') }}">
+                            {{ __('Create Offer') }}
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

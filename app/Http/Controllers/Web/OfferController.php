@@ -3,18 +3,23 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Services\v1\OfferService;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
 {
-    public function __construct()
+    protected $offerService;
+    public function __construct(OfferService $offerService)
     {
-        $this->middleware('auth')->except('index', 'show');
+        $this->middleware('auth')
+            ->except('index', 'show');
+        $this->offerService = $offerService;
     }
 
     public function index()
     {
-        dd('index');
+        $offers = $this->offerService->getAllOffers();
+        return view('web.offer.index', compact('offers'));
     }
 
     public function create()
@@ -24,7 +29,9 @@ class OfferController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $this->offerService->storeOffer($request);
+        $offers = $this->offerService->getAllOffers();
+        return view('web.offer.index', compact('offers'));
     }
 
     /**

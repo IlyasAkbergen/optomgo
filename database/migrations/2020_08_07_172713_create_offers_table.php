@@ -24,6 +24,7 @@ class CreateOffersTable extends Migration
                 ->on('users')
                 ->references('id')
                 ->onDelete('cascade');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

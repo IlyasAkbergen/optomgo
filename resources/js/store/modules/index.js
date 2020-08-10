@@ -1,11 +1,9 @@
 // https://vuex.vuejs.org/en/modules.html
-import order from './order'
-import stage from './stage'
+import offer from './filter'
 
 const requireModule = require.context('.', true, /\.js$/)
 const modules = {
-    order,
-    stage,
+    offer,
 };
 
 requireModule.keys().forEach(fileName => {

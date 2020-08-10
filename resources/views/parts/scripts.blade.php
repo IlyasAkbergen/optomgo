@@ -1,6 +1,6 @@
 {{--<!-- jQuery -->--}}
 {{--<script type="application/javascript" src="{{ asset('js/jquery.min.js') }}"></script>--}}
-<!-- jQuery Easing -->
+{{--<!-- jQuery Easing -->--}}
 {{--<script type="application/javascript" src="{{ asset('js/jquery.easing.1.3.js') }}"></script>--}}
 {{--<!-- Bootstrap -->--}}
 {{--<script type="application/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>--}}
